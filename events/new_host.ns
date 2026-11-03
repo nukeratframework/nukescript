@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["hostname"])
+
+event.new_host:run()

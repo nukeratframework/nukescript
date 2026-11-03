@@ -1,0 +1,4 @@
+def run(row):
+    echo(network.add_socks(row["tag"], 1080))
+
+event.new_host:run()

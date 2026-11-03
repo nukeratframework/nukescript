@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["output"])
+
+event.output_received:run()

@@ -1,0 +1,4 @@
+def run(row):
+    echo(cmd(row["tag"], "whoami"))
+
+event.new_host:run()

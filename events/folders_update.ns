@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["path"])
+
+event.folders_update:run()

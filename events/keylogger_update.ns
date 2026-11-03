@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["content"])
+
+event.keylogger_update:run()

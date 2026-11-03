@@ -1,0 +1,14 @@
+import json
+import requests
+
+def post_host(host):
+    requests.post(
+        "http://127.0.0.1/data",
+        data=json.dumps(host, default=str),
+        headers={"Content-Type": "application/json"},
+    )
+
+def run(row):
+    post_host(row)
+
+event.new_host:run()

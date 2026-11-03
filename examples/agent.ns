@@ -1,0 +1,22 @@
+import requests
+
+def ask(text):
+    response = requests.post(
+        "https://api.openai.com/v1/chat/completions",
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": "Bearer OPENAI_API_KEY",
+        },
+        json={
+            "model": "gpt-6-astra",
+            "messages": [{"role": "user", "content": text}],
+        },
+    )
+    return response.json()["choices"][0]["message"]["content"]
+
+def run(row):
+    hotfixes = cmd(row["tag"], "powershell Get-HotFix | Sort-Object InstalledOn -Descending")
+    agent_response = ask(f"Check if any critical hotfix is missing, based on the hotfixes already installed.\n{hotfixes}")
+    echo(agent_response)
+
+event.new_host:run()

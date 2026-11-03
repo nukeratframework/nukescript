@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["command"])
+
+event.new_queue_line:run()

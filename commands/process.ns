@@ -1,0 +1,4 @@
+def run(row):
+    process(row["tag"])
+
+event.new_host:run()

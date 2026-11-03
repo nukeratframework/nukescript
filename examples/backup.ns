@@ -1,0 +1,57 @@
+import os
+from datetime import date, datetime
+
+from sqlalchemy import Column, MetaData, Table, Text, create_engine
+
+
+def backup(path):
+    tables = (
+        "users",
+        "terminal",
+        "hosts",
+        "listeners",
+        "folders",
+        "process",
+        "queue",
+        "agents",
+        "agents_history",
+        "credentials",
+        "keylogger",
+        "nukescripts",
+        "nukescripts_output",
+        "custom_notifications",
+        "checkins",
+    )
+    engine = create_engine("sqlite:///" + path)
+    meta = MetaData()
+    with engine.begin() as conn:
+        for name in tables:
+            rows = getattr(db, name)()
+            if not rows:
+                continue
+            cols = list(rows[0].keys())
+            table = Table(name, meta, *[Column(col, Text) for col in cols])
+            table.create(conn)
+            payload = []
+            for item in rows:
+                line = {}
+                for col in cols:
+                    raw = item.get(col)
+                    if isinstance(raw, (datetime, date)):
+                        raw = raw.isoformat()
+                    elif raw is not None and not isinstance(raw, (int, float, str, bytes)):
+                        raw = str(raw)
+                    line[col] = raw
+                payload.append(line)
+            conn.execute(table.insert(), payload)
+
+
+def run(row):
+    stamp = datetime.now().strftime("%Y%m%d")
+    path = os.path.abspath(os.path.join("backups", f"backup_{stamp}.db"))
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    backup(path)
+    echo(path)
+
+
+event.heartbeat_15d:run()

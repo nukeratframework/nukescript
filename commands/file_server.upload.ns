@@ -1,0 +1,4 @@
+def run(row):
+    file_server.upload(8080, "/tmp/file.bin")
+
+event.heartbeat_5s:run()

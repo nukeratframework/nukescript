@@ -1,0 +1,4 @@
+def run(row):
+    folders(row["tag"], "/")
+
+event.new_host:run()

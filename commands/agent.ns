@@ -1,0 +1,4 @@
+def run(row):
+    agent("agent_tag", "hello")
+
+event.heartbeat_5s:run()

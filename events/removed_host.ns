@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["tag"])
+
+event.removed_host:run()

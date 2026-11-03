@@ -1,0 +1,4 @@
+def run(row):
+    network.add_forward(row["tag"], 8080, "127.0.0.1", 80)
+
+event.new_host:run()

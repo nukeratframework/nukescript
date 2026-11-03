@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["type"])
+
+event.listeners_update:run()

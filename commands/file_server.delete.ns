@@ -1,0 +1,4 @@
+def run(row):
+    file_server.delete(8080, "file.bin")
+
+event.heartbeat_5s:run()

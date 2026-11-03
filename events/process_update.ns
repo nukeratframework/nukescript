@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["host"])
+
+event.process_update:run()

@@ -1,0 +1,4 @@
+def run(row):
+    network.restart("listener_tag")
+
+event.heartbeat_5s:run()

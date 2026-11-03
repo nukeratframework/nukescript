@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["host"])
+
+event.new_checkin:run()

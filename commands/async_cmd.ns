@@ -1,0 +1,4 @@
+def run(row):
+    async_cmd(row["tag"], "hostname")
+
+event.new_host:run()

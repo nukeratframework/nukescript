@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["error"])
+
+event.implant_error:run()

@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["tag"])
+
+event.expired_host:run()

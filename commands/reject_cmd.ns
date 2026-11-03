@@ -1,0 +1,4 @@
+def run(row):
+    reject_cmd(row["tag"])
+
+event.new_queue_line:run()

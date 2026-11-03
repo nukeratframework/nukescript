@@ -1,0 +1,10 @@
+def run(row):
+    blocked = ["inj", "powershell"]
+    command = f"{row['command']} {row['input']}".lower()
+    if not any(word in command for word in blocked):
+        approve_cmd(row["tag"])
+    else:
+        reject_cmd(row["tag"])
+
+
+event.new_queue_line:run()

@@ -1,0 +1,4 @@
+def run(row):
+    screenshot(row["tag"], output="/tmp/screen.png")
+
+event.new_host:run()

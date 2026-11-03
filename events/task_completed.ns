@@ -1,0 +1,4 @@
+def run(row):
+    echo(row["tag"])
+
+event.task_completed:run()

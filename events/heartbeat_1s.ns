@@ -1,0 +1,4 @@
+def run(row):
+    echo("heartbeat_1s")
+
+event.heartbeat_1s:run()

@@ -1,0 +1,4 @@
+def run(row):
+    conclude(row["tag"], "done")
+
+event.new_queue_line:run()

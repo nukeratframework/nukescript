@@ -43,7 +43,7 @@ To follow the output from echo, open the *NS Debugger* from *Tabs* > *NS Debugge
 
 ## Documentation
 
-To read more about NukeScript, see the docs at [www.nukerat.com/docs/nukescripts](https://www.nukerat.com/docs/nukescripts).
-- Events: [www.nukerat.com/docs/nukescripts/events](https://www.nukerat.com/docs/nukescripts/events)
-- Commands: [www.nukerat.com/docs/nukescripts/commands](https://www.nukerat.com/docs/nukescripts/commands)
-- Examples: [www.nukerat.com/docs/nukescripts/examples](https://www.nukerat.com/docs/nukescripts/examples)
+To read more about NukeScript, see the docs at [nukerat.com/docs/nukescripts](https://nukerat.com/docs/nukescripts).
+- Events: [nukerat.com/docs/nukescripts/events](https://nukerat.com/docs/nukescripts/events)
+- Commands: [nukerat.com/docs/nukescripts/commands](https://nukerat.com/docs/nukescripts/commands)
+- Examples: [nukerat.com/docs/nukescripts/examples](https://nukerat.com/docs/nukescripts/examples)
